@@ -2,8 +2,6 @@
 
 ![Abaqus](https://img.shields.io/badge/Abaqus-2026_Standard-blue.svg)
 ![SolidWorks](https://img.shields.io/badge/SolidWorks-2024_SP5-red.svg)
-![Mesh](https://img.shields.io/badge/Mesh-C3D10_Quadratic_Tet-green.svg)
-![Standard](https://img.shields.io/badge/Standard-TCVN_11823--2017-orange.svg)
 
 parametric 3d cad modeling and finite element stress-deflection analysis of an elevated viaduct t-pier substructure for ho chi minh city metro line 1 (ben thanh - suoi tien). solidworks parametric cad models (.step, .sldprt, .slddrw), abaqus simulation database (.cae), solver input deck (.inp), solved output database (.odb), diagnostics (.dat), and high-resolution setup dialogs.
 
@@ -11,29 +9,20 @@ parametric 3d cad modeling and finite element stress-deflection analysis of an e
 
 ## outline
 
-### cad/ >>>>>3d geometry & engineering blueprint<<<<<
-* `hcm_metro_t_pier.STEP`: neutral 3d solid model export (ap214) for direct import into any fea preprocessor.
-* `hcm_metro_t_pier.SLDPRT`: parametric native solidworks 3d part file with feature history tree (footing, column shaft, cantilever haunch cuts, continuous corner rounds).
-* `hcm_metro_t_pier.SLDDRW`: verified $1:125$ scale engineering drawing sheet with 3-view orthographic projections, isometric view, and complete manufacturing dimension callouts.
+### cad/ >>>>>3d models<<<<<
 
-### simulation/ >>>>>abaqus solver & model setup<<<<<
+### simulation/ >>>>>abaqus setup<<<<<
 * `hcm_metro_pier_analysis.cae`: full abaqus/cae database with geometry, material assignments, interaction surfaces, step definitions, load cases, and quadratic tet mesh.
 * `hcm_metro_pier_analysis.rec`: abaqus replay journal log recording the exact session command history.
 * `LinearStatic.inp`: self-contained abaqus solver input deck containing all 986 nodal coordinates, 484 c3d10 solid element connectivities, boundary constraints, and distributed surface traction definitions.
 
-### data/ >>>>>solver output & numerical diagnostics<<<<<
+### data/ >>>>>output & diagnostics<<<<<
 * `LinearStatic.odb`: solved binary abaqus output database containing full 3d tensor fields for von mises stress, principal stresses ($\sigma_1, \sigma_2, \sigma_3$), and displacement vector components ($U_x, U_y, U_z$).
 * `LinearStatic.dat`: abaqus printed data output with element topology diagnostics, degrees-of-freedom tally (2,958 dofs), and memory allocation logs.
 * `LinearStatic.msg`: step convergence diagnostics verifying equilibrium convergence in 7 increments with zero cutbacks.
 * `LinearStatic.sta`: job status log confirming successful standard implicit completion.
 
 ### images/ >>>>>high-res setup & analysis captures<<<<<
-* `hcm_metro_t_pier.JPG`: reference photograph of authentic viaduct pier along metro line 1.
-* `hcm_metro_pier_abaqus.png`: imported solid body in abaqus with structural global coordinate axes.
-* `hcm_metro_pier_properties.png`: composite validation capture of material elasticity, density, downward gravity, and bearing pressure dialogs.
-* `hcm_metro_pier_mesh.png`: refined c3d10 tetrahedral mesh showing haunch transition refinement.
-* `hcm_metro_pier_loads.png`: applied cantilever bearing pressures ($5.14\,\text{MPa}$) and fixed base boundary condition.
-* `hcm_metro_pier_analysis.png`: 4-quadrant simulation postprocessing dashboard ($\sigma_{\text{vM}}$, $\sigma_1$, $\sigma_3$, $U_3$).
 
 ---
 
