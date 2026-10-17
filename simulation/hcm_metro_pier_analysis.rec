@@ -1,0 +1,318 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['LinearStatic'].submit(consistencyChecking=OFF)
+mdb.jobs['LinearStatic']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic', 'clientHost': 'DESKTOP-6IE4RTD', 'handle': 0})
+mdb.jobs['LinearStatic']._Message(HEADING, {
+    'heading': 'HCM Metro Line T-Pier Static & Capacity Analysis', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': '27 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 4 at 9 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 5 at 9 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 6 at 9 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FILE, {
+    'file': 'C:\\Users\\Lenovo\\LinearStatic.odb', 'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(COMPLETED, {
+    'message': 'Analysis phase complete', 'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic', 'clientHost': 'DESKTOP-6IE4RTD', 
+    'handle': 5736})
+mdb.jobs['LinearStatic']._Message(STEP, {'stepId': 1, 'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(MEMORY_ESTIMATE, {'memory': 25.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(PHYSICAL_MEMORY, {'physical_memory': 65034.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 1, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 2, 'iterations': 2, 
+    'totalTime': 0.1, 'stepTime': 0.1, 'timeIncrement': 0.1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 2, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.2, 'stepTime': 0.2, 'timeIncrement': 0.1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 3, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 3, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.35, 'stepTime': 0.35, 'timeIncrement': 0.15, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 4, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 4, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.55, 'stepTime': 0.55, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 5, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 5, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.75, 'stepTime': 0.75, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 6, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 6, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.95, 'stepTime': 0.95, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 7, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 7, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 1.0, 'stepTime': 1.0, 'timeIncrement': 0.05, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(END_STEP, {'stepId': 1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(COMPLETED, {
+    'message': 'Analysis phase complete', 'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct 17 12:13:26 2026', 'jobName': 'LinearStatic'})
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteSeeds(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ), size=0.2)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteSeeds(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ), size=100.0)
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ), size=10.0)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ), size=3.5)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteSeeds(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ), size=4.1)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['MetroPier-1'], ))
+mdb.jobs['LinearStatic'].submit(consistencyChecking=OFF)
+mdb.jobs['LinearStatic']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic', 'clientHost': 'DESKTOP-6IE4RTD', 'handle': 0})
+mdb.jobs['LinearStatic']._Message(HEADING, {
+    'heading': 'HCM Metro Line T-Pier Static & Capacity Analysis', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': '62 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 4 at 25 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 5 at 25 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 6 at 25 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FILE, {
+    'file': 'C:\\Users\\Lenovo\\LinearStatic.odb', 'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(COMPLETED, {
+    'message': 'Analysis phase complete', 'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic', 'clientHost': 'DESKTOP-6IE4RTD', 
+    'handle': 21444})
+mdb.jobs['LinearStatic']._Message(STEP, {'stepId': 1, 'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(MEMORY_ESTIMATE, {'memory': 30.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(PHYSICAL_MEMORY, {'physical_memory': 65034.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(MINIMUM_MEMORY, {'minimum_memory': 18.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 1, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 2, 'iterations': 2, 
+    'totalTime': 0.1, 'stepTime': 0.1, 'timeIncrement': 0.1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 2, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.2, 'stepTime': 0.2, 'timeIncrement': 0.1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 3, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 3, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.35, 'stepTime': 0.35, 'timeIncrement': 0.15, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 4, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 4, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.55, 'stepTime': 0.55, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 5, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 5, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.75, 'stepTime': 0.75, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 6, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 6, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.95, 'stepTime': 0.95, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 7, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 7, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 1.0, 'stepTime': 1.0, 'timeIncrement': 0.05, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(END_STEP, {'stepId': 1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(COMPLETED, {
+    'message': 'Analysis phase complete', 'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct 17 13:05:35 2026', 'jobName': 'LinearStatic'})
+mdb.models['Model-1'].loads['Load-Gravity'].setValues(comp2=0.0, comp3=-9810.0, 
+    distributionType=UNIFORM, field='')
+mdb.jobs['LinearStatic'].submit(consistencyChecking=OFF)
+mdb.jobs['LinearStatic']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic', 'clientHost': 'DESKTOP-6IE4RTD', 'handle': 0})
+mdb.jobs['LinearStatic']._Message(HEADING, {
+    'heading': 'HCM Metro Line T-Pier Static & Capacity Analysis', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': '62 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 4 at 25 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 5 at 25 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(WARNING, {
+    'message': 'Boundary conditions are specified on inactive dof 6 at 25 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'phase': BATCHPRE_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FILE, {
+    'file': 'C:\\Users\\Lenovo\\LinearStatic.odb', 'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(COMPLETED, {
+    'message': 'Analysis phase complete', 'phase': BATCHPRE_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic', 'clientHost': 'DESKTOP-6IE4RTD', 
+    'handle': 21132})
+mdb.jobs['LinearStatic']._Message(STEP, {'stepId': 1, 'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(MEMORY_ESTIMATE, {'memory': 30.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(PHYSICAL_MEMORY, {'physical_memory': 65034.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(MINIMUM_MEMORY, {'minimum_memory': 18.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 1, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 2, 'iterations': 2, 
+    'totalTime': 0.1, 'stepTime': 0.1, 'timeIncrement': 0.1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 2, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.2, 'stepTime': 0.2, 'timeIncrement': 0.1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 3, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 3, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.35, 'stepTime': 0.35, 'timeIncrement': 0.15, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 4, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 4, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.55, 'stepTime': 0.55, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 5, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 5, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.75, 'stepTime': 0.75, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 6, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 6, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 0.95, 'stepTime': 0.95, 'timeIncrement': 0.2, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(ODB_FRAME, {'step': 0, 'frame': 7, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(STATUS, {'step': 1, 'increment': 7, 
+    'attempts': 1, 'severe': 0, 'equilibrium': 1, 'iterations': 1, 
+    'totalTime': 1.0, 'stepTime': 1.0, 'timeIncrement': 0.05, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(END_STEP, {'stepId': 1, 
+    'phase': STANDARD_PHASE, 'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(COMPLETED, {
+    'message': 'Analysis phase complete', 'phase': STANDARD_PHASE, 
+    'jobName': 'LinearStatic'})
+mdb.jobs['LinearStatic']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct 17 13:32:14 2026', 'jobName': 'LinearStatic'})

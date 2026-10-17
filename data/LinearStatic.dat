@@ -1,0 +1,309 @@
+1
+
+   Abaqus Learning Edition 2026                                  Date 17-Oct-2026   Time 13:05:32
+   
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *heading
+          HCM Metro Line T-Pier Static & Capacity Analysis                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+  *material, name=CONCRETE_C40
+  *density
+  *elastic
+  *solidsection, elset=ASSEMBLY_METROPIER-1__PICKEDSET2, material=CONCRETE_C40
+  *solidsection, elset=ASSEMBLY_METROPIER-1__PICKEDSET2, material=CONCRETE_C40
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF5
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF5
+  *boundary
+  *boundary
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF5
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 62 elements are distorted. Either the isoparametric angles are out 
+             of the suggested limits or the triangular or tetrahedral quality 
+             measure is bad. The elements have been identified in element set 
+             WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted tetrahedral elements
+  
+        Element        Quality measure     Min angle        Max angle     Adjusted nodes 
+ --------------------- ---------------- ---------------- ---------------- -------------- 
+         METROPIER-1.2        0.0143159          18.7393          139.624       NO       
+         METROPIER-1.3       0.00885814          14.2902           146.88       NO       
+         METROPIER-1.7         0.166492          9.27404          95.9173       NO       
+         METROPIER-1.8        0.0246963          6.94844          126.993       NO       
+        METROPIER-1.10        0.0880331           5.5302          156.682       NO       
+        METROPIER-1.12        0.0443054          9.48527          93.4629       NO       
+        METROPIER-1.13        0.0443054          8.36999          99.6677       NO       
+        METROPIER-1.15        0.0148493          29.5676          107.646       NO       
+        METROPIER-1.16        0.0150392          10.5366          119.935       NO       
+        METROPIER-1.19        0.0961567          7.16673           123.59       NO       
+        METROPIER-1.41        0.0807462          9.04391          110.855       NO       
+        METROPIER-1.48         0.047001          7.84655          99.1993       NO       
+        METROPIER-1.49         0.047001          9.07604          106.936       NO       
+        METROPIER-1.50         0.141062          8.25431          114.336       NO       
+        METROPIER-1.51        0.0448226          7.52314          109.107       NO       
+        METROPIER-1.52        0.0450621          9.38062          102.302       NO       
+        METROPIER-1.53        0.0439251          7.90943          101.381       NO       
+        METROPIER-1.54         0.140512          8.11317          113.616       NO       
+        METROPIER-1.95        0.0150392          10.4653          110.128       NO       
+       METROPIER-1.103        0.0533914          6.82633          121.145       NO       
+       METROPIER-1.105        0.0246963          8.85925          118.897       NO       
+       METROPIER-1.108        0.0129615          12.2619          99.3975       NO       
+       METROPIER-1.109       0.00957497          17.1816          119.182       NO       
+       METROPIER-1.110        0.0129615           12.872          102.312       NO       
+       METROPIER-1.111         0.104396          8.31591          128.499       NO       
+       METROPIER-1.201        0.0133228          28.0584          111.777       NO       
+       METROPIER-1.214        0.0175499          30.8679          131.056       NO       
+       METROPIER-1.248       0.00864383          13.7385          108.354       NO       
+       METROPIER-1.249       0.00864383          11.3105          119.898       NO       
+       METROPIER-1.251         0.106579          7.27973          127.891       NO       
+       METROPIER-1.253         0.192248          9.12303           98.176       NO       
+       METROPIER-1.257         0.014549          17.2611          124.423       NO       
+       METROPIER-1.259        0.0187686          16.1243          129.831       NO       
+       METROPIER-1.276        0.0725391          8.01704          92.9726       NO       
+       METROPIER-1.278        0.0509806           8.7626           107.44       NO       
+       METROPIER-1.282         0.130431            7.716          107.004       NO       
+       METROPIER-1.287         0.187291          8.81663          91.3801       NO       
+       METROPIER-1.290        0.0117967          13.8873           143.29       NO       
+       METROPIER-1.291        0.0448226          9.54745          100.221       NO       
+       METROPIER-1.295         0.180082          8.98979          96.8367       NO       
+       METROPIER-1.303        0.0103734          29.8369          114.041       NO       
+       METROPIER-1.306         0.164358          8.97356          100.097       NO       
+       METROPIER-1.308         0.049851          9.23657          99.4708       NO       
+       METROPIER-1.328        0.0725391          7.23782          96.6884       NO       
+       METROPIER-1.332        0.0160827          15.1693          136.603       NO       
+       METROPIER-1.334         0.180464          8.80649          96.9758       NO       
+       METROPIER-1.342         0.192248          9.12303           98.176       NO       
+       METROPIER-1.344         0.182527           8.1436          102.916       NO       
+       METROPIER-1.362         0.125098          8.86046          151.194       NO       
+       METROPIER-1.400        0.0533914          6.65677          115.891       NO       
+       METROPIER-1.403         0.049851          7.34869            108.2       NO       
+       METROPIER-1.404        0.0509806          7.61552          100.131       NO       
+       METROPIER-1.405        0.0479166          8.76035          109.444       NO       
+       METROPIER-1.418        0.0500875          7.19305          110.169       NO       
+       METROPIER-1.421         0.106579          7.27973          127.891       NO       
+       METROPIER-1.425         0.145089          7.97691          119.379       NO       
+       METROPIER-1.428         0.125167          8.86255          151.181       NO       
+       METROPIER-1.438        0.0500875          9.08879          101.439       NO       
+       METROPIER-1.439         0.161047          7.92037          119.024       NO       
+       METROPIER-1.448        0.0479166           7.6583          102.244       NO       
+       METROPIER-1.457        0.0439251          9.08954          109.025       NO       
+       METROPIER-1.468        0.0450621           7.3483          111.168       NO       
+  
+  
+  *step, name=Step-1, nlgeom=YES
+  *step, name=Step-1, nlgeom=YES
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *step, name=Step-1, nlgeom=YES
+  *step, name=Step-1, nlgeom=YES
+  *static
+  *dload
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *dsload
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *endstep
+  *boundary
+  *step, name=Step-1, nlgeom=YES
+  *static
+  *endstep
+
+ ***WARNING: Boundary conditions are specified on inactive dof 4 at 25 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof4.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 5 at 25 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof5.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 6 at 25 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof6.
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                   484
+          NUMBER OF NODES IS                                      986
+          NUMBER OF NODES DEFINED BY THE USER                     986
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                 2958
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.20    
+       SYSTEM TIME (SEC)    =      0.0    
+       TOTAL CPU TIME (SEC) =     0.20    
+       WALLCLOCK TIME (SEC) =            0
+1
+
+   Abaqus Learning Edition 2026                                  Date 17-Oct-2026   Time 13:05:33
+   
+
+     HCM Metro Line T-Pier Static & Capacity Analysis                                          STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                0.100    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                0.200    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      7.4694290E-07
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                      3.8856961E-10      9.1608212E-07       4.349695    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      3.6699060E-05      3.4753635E-05      7.4286258E-06
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -7.6802155E-13     -1.1857974E-12     -9.9662130E-12
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      2.2567017E-05      2.0621591E-05      7.4286258E-06
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -7.6802155E-13     -1.1845349E-12     -6.9898864E-12
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          6.07E+07               18                 30
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      4 WARNING MESSAGES ON THE DAT FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.80    
+       SYSTEM TIME (SEC)    =     0.30    
+       TOTAL CPU TIME (SEC) =      1.1    
+       WALLCLOCK TIME (SEC) =            1

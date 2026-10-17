@@ -1,0 +1,17 @@
+# Abaqus temporary and scratch files
+*.lck
+*.tmp
+*.prt
+*.com
+*.ipm
+*.log
+*.sim
+*.res
+*.mdl
+*.stt
+*.023
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
