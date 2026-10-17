@@ -1,15 +1,14 @@
 # hcmc metro viaduct t-pier 3d fea simulation (me2091)
 
 ![Abaqus](https://img.shields.io/badge/Abaqus-2026_Standard-blue.svg)
-![SolidWorks](https://img.shields.io/badge/SolidWorks-2024_SP5-red.svg)
+![Mesh](https://img.shields.io/badge/Mesh-C3D10_Quadratic_Tet-green.svg)
+![Standard](https://img.shields.io/badge/Standard-TCVN_11823--2017-orange.svg)
 
-parametric 3d cad modeling and finite element stress-deflection analysis of an elevated viaduct t-pier substructure for ho chi minh city metro line 1 (ben thanh - suoi tien). solidworks parametric cad models (.step, .sldprt, .slddrw), abaqus simulation database (.cae), solver input deck (.inp), solved output database (.odb), diagnostics (.dat), and high-resolution setup dialogs.
+finite element stress and serviceability deflection simulation of an elevated viaduct t-pier substructure for ho chi minh city metro line 1 (ben thanh - suoi tien) in abaqus/standard. contains complete abaqus simulation databases (.cae), solver input deck (.inp), solved binary output database (.odb), convergence and element diagnostics (.dat, .msg, .sta), and high-resolution setup dialogs.
 
 ---
 
 ## outline
-
-### cad/ >>>>>3d models<<<<<
 
 ### simulation/ >>>>>abaqus setup<<<<<
 * `hcm_metro_pier_analysis.cae`: full abaqus/cae database with geometry, material assignments, interaction surfaces, step definitions, load cases, and quadratic tet mesh.

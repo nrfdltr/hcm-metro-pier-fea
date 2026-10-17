@@ -15,3 +15,11 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# SolidWorks and CAD models
+*.sldprt
+*.slddrw
+*.sldasm
+*.step
+*.stp
+cad/
