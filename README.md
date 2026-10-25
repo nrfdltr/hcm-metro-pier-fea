@@ -47,7 +47,10 @@ finite element stress and serviceability deflection simulation of an elevated vi
 * **foundation constraint:** fully fixed (encastre: $U_x = U_y = U_z = UR_x = UR_y = UR_z = 0$) across the bottom surface ($10.0\,\text{m} \times 8.0\,\text{m} = 80.0\,\text{m}^2$).
 
 ### 2. material properties & load definitions
-![Material and Load Properties Dialog](images/hcm_metro_pier_properties.png)
+![Material Properties - Density](images/mat_properties_1.png)
+![Material Properties - Elasticity](images/mat_properties_2.png)
+![Load Properties - Gravity](images/load_gravity_properties.png)
+![Load Properties - Bearing Pressure](images/load_pressure_properties.png)
 
 * **concrete grade:** high-performance concrete (hpc) grade c40 (tcvn 11823:2017).
 * **young's modulus:** $E = 32,500\,\text{MPa}$ ($3.25 \times 10^4\,\text{N/mm}^2$).
@@ -58,6 +61,7 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 ### 3. finite element discretization
 ![FEA Mesh](images/hcm_metro_pier_mesh.png)
+![Mesh Controls & Properties](images/mesh_properties.png)
 
 * **element type:** c3d10 (10-node quadratic tetrahedral solid element).
 * **element count:** 484 elements.
@@ -68,9 +72,13 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 ## visual results
 
-here are the simulation contour fields obtained from the linear static implicit solve.
+here are the simulation contour fields obtained from the linear static implicit solve across two perspectives.
 
-![FEA Simulation Results](images/hcm_metro_pier_analysis.png)
+### (a) overall top-down perspective (axial column compression & bearing distribution)
+![FEA Simulation Results Overall](images/hcm_metro_pier_analysis.png)
+
+### (b) underside close-up perspective (localized haunch fillet stress concentration)
+![FEA Simulation Results Haunch Close-up](images/hcm_metro_pier_analysis_2.png)
 
 ### key findings summary
 | Metric / Stress Invariant | FEA Output Value | Allowable Code Limit (TCVN 11823) | Safety Margin / Status |
