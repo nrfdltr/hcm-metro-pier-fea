@@ -72,12 +72,26 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 ## visual results
 
-here are the simulation contour fields obtained from the linear static implicit solve across two perspectives.
+here are the simulation contour fields obtained from the linear static implicit solve in abaqus/standard.
 
-### (a) overall top-down perspective (axial column compression & bearing distribution)
+### 1. 3d nodal displacement field contours ($u_1, u_2, u_3, |\mathbf{u}|$)
+
+| Longitudinal Displacement ($U_1$) | Transverse Displacement ($U_2$) |
+| :---: | :---: |
+| ![Longitudinal Displacement U1](images/analysis_u1.png) | ![Transverse Displacement U2](images/analysis_u2.png) |
+| **Vertical Displacement ($U_3$)** | **Resultant Magnitude ($|\mathbf{u}|$)** |
+| ![Vertical Displacement U3](images/analysis_u3.png) | ![Resultant Magnitude U](images/analysis_u.png) |
+
+* **$U_1$ (track axis):** $|u_x| \le 0.17\,\text{mm}$ (negligible longitudinal movement along the track direction, confirming symmetric structural response without twisting or lateral sway).
+* **$U_2$ (transverse axis):** symmetrical outward lateral bulging ($u_y \in [-2.01, +2.02]\,\text{mm}$) induced by axial column compression via Poisson's effect ($\nu = 0.20$).
+* **$U_3$ (vertical axis):** axial shortening of the vertical column shaft by $u_{z,\text{col}} = -6.52\,\text{mm}$, with peak downward tip settlement reaching $u_{z,\text{tip}} = -11.37\,\text{mm}$. The net cantilever flexural bending deflection is $\Delta_{\text{tip}} = |-11.37 - (-6.52)| = 4.85\,\text{mm} < \Delta_{\text{allow}} = 8.133\,\text{mm}$ (satisfies TCVN 11823 with $+40.4\%$ margin of safety).
+* **$|\mathbf{u}|$ (magnitude):** peak Euclidean resultant displacement of $11.55\,\text{mm}$ localized at the outer crosshead wingtip corners.
+
+### 2. von mises stress & haunch concentrations
+#### (a) overall top-down perspective (axial column compression & bearing distribution)
 ![FEA Simulation Results Overall](images/hcm_metro_pier_analysis.png)
 
-### (b) underside close-up perspective (localized haunch fillet stress concentration)
+#### (b) underside close-up perspective (localized haunch fillet stress concentration)
 ![FEA Simulation Results Haunch Close-up](images/hcm_metro_pier_analysis_2.png)
 
 ### key findings summary
