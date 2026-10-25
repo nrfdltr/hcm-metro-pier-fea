@@ -94,6 +94,15 @@ here are the simulation contour fields obtained from the linear static implicit 
 #### (b) underside close-up perspective (localized haunch fillet stress concentration)
 ![FEA Simulation Results Haunch Close-up](images/hcm_metro_pier_analysis_2.png)
 
+### 3. 3d principal stress contours ($\sigma_1, \sigma_3$)
+
+| Maximum Principal Stress ($\sigma_1$, Tension) | Minimum Principal Stress ($\sigma_3$, Compression) |
+| :---: | :---: |
+| ![Max Principal Stress S1](images/analysis_s1.png) | ![Min Principal Stress S3](images/analysis_s3.png) |
+
+* **$\sigma_1$ (top deck tension):** peak tensile stress reaches $+22.97\,\text{MPa}$ at Node 306 across the top deck fibers ($+18.83\,\text{MPa}$ at internal Gauss points), exceeding the plain concrete rupture modulus ($f_r = 3.98\,\text{MPa}$) and demonstrating the necessity of internal tieback reinforcement.
+* **$\sigma_3$ (haunch compression):** peak compressive stress reaches $-42.87\,\text{MPa}$ at Node 45 ($-41.91\,\text{MPa}$ at internal Gauss points) along the concave curved fillet ($R = 2,000\,\text{mm}$), protected by triaxial lateral confinement ($SF = 1.17 > 1.00$).
+
 ### key findings summary
 | Metric / Stress Invariant | FEA Output Value | Allowable Code Limit (TCVN 11823) | Safety Margin / Status |
 | :--- | :---: | :---: | :--- |
