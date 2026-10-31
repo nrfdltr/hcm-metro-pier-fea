@@ -1,0 +1,500 @@
+1
+
+   Abaqus Learning Edition 2026                                  Date 31-Oct-2026   Time 10:58:23
+   
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *heading
+  *material, name=CONCRETE_C40
+  *density
+  *elastic
+  *solidsection, elset=ASSEMBLY_METROPIER-1__PICKEDSET2, material=CONCRETE_C40
+  *solidsection, elset=ASSEMBLY_METROPIER-1__PICKEDSET2, material=CONCRETE_C40
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF49
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF50
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF51
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF49
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF50
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF51
+  *boundary
+  *boundary
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF49
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF50
+  *surface, type=ELEMENT, name=ASSEMBLY__PICKEDSURF51
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 91 elements are distorted. Either the isoparametric angles are out 
+             of the suggested limits or the triangular or tetrahedral quality 
+             measure is bad. The elements have been identified in element set 
+             WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted tetrahedral elements
+  
+        Element        Quality measure     Min angle        Max angle     Adjusted nodes 
+ --------------------- ---------------- ---------------- ---------------- -------------- 
+        METROPIER-1.11      0.000174292          4.61405          155.378       NO       
+        METROPIER-1.12       0.00536795          4.30737           141.26       NO       
+        METROPIER-1.13      0.000402423          19.6714          123.282       NO       
+        METROPIER-1.14        0.0172552          5.48716          97.6588       NO       
+        METROPIER-1.15          0.01398          19.4766          148.524       NO       
+        METROPIER-1.16       0.00045326          9.25869          153.198       NO       
+        METROPIER-1.17      0.000948679          10.6339          164.174       NO       
+        METROPIER-1.18      0.000787064          34.8697          124.133       NO       
+        METROPIER-1.19      5.90884E-05          10.9625          170.242       NO       
+        METROPIER-1.26      0.000566224          6.53422          125.115       NO       
+        METROPIER-1.84       0.00642863          13.3494          151.508       NO       
+        METROPIER-1.88        0.0038338          19.0222          146.466       NO       
+        METROPIER-1.89        0.0526294          6.88173          120.321       NO       
+        METROPIER-1.92       0.00442773          16.6927          161.377       NO       
+       METROPIER-1.101       0.00609399          9.77754          128.423       NO       
+       METROPIER-1.106       0.00259525          7.12735          146.095       NO       
+       METROPIER-1.107       0.00641657          22.5413          134.856       NO       
+       METROPIER-1.110       0.00811623          19.5941          139.911       NO       
+       METROPIER-1.111        0.0078304           6.9048           113.79       NO       
+       METROPIER-1.118       0.00911493          7.67289          102.659       NO       
+       METROPIER-1.121        0.0422883          6.88094          101.101       NO       
+       METROPIER-1.122       0.00299385             22.5          134.976       NO       
+       METROPIER-1.123        0.0173367          13.1962          134.661       NO       
+       METROPIER-1.126        0.0304081          7.97535           112.54       NO       
+       METROPIER-1.128         0.102195          8.16513          166.374       NO       
+       METROPIER-1.129       0.00498617          11.2799          132.619       NO       
+       METROPIER-1.130       0.00501506          9.15141          146.274       NO       
+       METROPIER-1.132       0.00185978          13.8962          157.319       NO       
+       METROPIER-1.133      5.63724E-05          4.37853          148.879       NO       
+       METROPIER-1.136       0.00440137           11.726          158.591       NO       
+       METROPIER-1.137       0.00515084          18.0656          145.124       NO       
+       METROPIER-1.142        0.0165405          13.6042          139.591       NO       
+       METROPIER-1.143        0.0874692           5.9192          135.001       NO       
+       METROPIER-1.150       0.00299385          1.64892             135.       NO       
+       METROPIER-1.151      5.63724E-05          6.12111          158.705       NO       
+       METROPIER-1.153       0.00631295          19.4899          152.257       NO       
+       METROPIER-1.159      0.000783512          8.86418          96.0862       NO       
+       METROPIER-1.161        0.0183196          7.48153          123.722       NO       
+       METROPIER-1.164       0.00013005          13.0533          132.562       NO       
+       METROPIER-1.170        0.0106419          4.09445          124.385       NO       
+       METROPIER-1.173         0.101645          8.41686          92.1194       NO       
+       METROPIER-1.175       0.00655446          11.9392          140.957       NO       
+       METROPIER-1.180        0.0137337          23.7709          116.615       NO       
+       METROPIER-1.182        0.0394031          3.72024          105.308       NO       
+       METROPIER-1.184       0.00769305          4.14249          131.788       NO       
+       METROPIER-1.186        0.0107528          13.8204          153.921       NO       
+       METROPIER-1.189        0.0427281          6.88094          104.517       NO       
+       METROPIER-1.191        0.0413724          7.55602          128.673       NO       
+       METROPIER-1.192        0.0993758          8.41686           92.242       NO       
+       METROPIER-1.193        0.0106419          4.09445          124.385       NO       
+       METROPIER-1.206        0.0157459          23.4479          133.046       NO       
+       METROPIER-1.209        0.0164349          13.0726          136.844       NO       
+       METROPIER-1.226      0.000633211          24.1516          119.587       NO       
+       METROPIER-1.228        0.0394031          3.72024          105.308       NO       
+       METROPIER-1.229      7.30052E-06           4.3651          162.007       NO       
+       METROPIER-1.230      0.000319311          12.0246          127.826       NO       
+       METROPIER-1.232       0.00498617          15.6079          147.672       NO       
+       METROPIER-1.235       0.00388229          15.7887          131.114       NO       
+       METROPIER-1.252         0.126893          8.34364          103.421       NO       
+       METROPIER-1.253       0.00299385             22.5          134.976       NO       
+       METROPIER-1.256      0.000166901          2.54217          153.725       NO       
+       METROPIER-1.257      0.000445944          5.16528          95.9507       NO       
+       METROPIER-1.258      4.32911E-06          2.18544          161.041       NO       
+       METROPIER-1.262         0.104526          9.54648          146.247       NO       
+       METROPIER-1.263        0.0013397          8.33275          166.224       NO       
+       METROPIER-1.264        0.0169789           11.319          155.374       NO       
+       METROPIER-1.265         0.042486          9.00097           148.55       NO       
+       METROPIER-1.273        0.0106419          4.09445          124.385       NO       
+       METROPIER-1.274       0.00769305          3.45605          128.824       NO       
+       METROPIER-1.288        0.0198188          7.77904           125.28       NO       
+       METROPIER-1.292       0.00669025          34.0885          116.052       NO       
+       METROPIER-1.312        0.0417265          8.83203          148.351       NO       
+       METROPIER-1.313      4.05296E-05          5.47704          159.795       NO       
+       METROPIER-1.320        0.0993998          9.76615          120.842       NO       
+       METROPIER-1.324        0.0172552          4.27879          92.7995       NO       
+       METROPIER-1.325      2.59813E-05          2.88685          133.831       NO       
+       METROPIER-1.327      3.20342E-05          3.44069          143.869       NO       
+       METROPIER-1.328        0.0750233          8.41616          93.7623       NO       
+       METROPIER-1.330      0.000406899          28.9878          128.328       NO       
+       METROPIER-1.331      0.000187183          2.30852          124.625       NO       
+       METROPIER-1.332       0.00645428          24.2035          154.118       NO       
+       METROPIER-1.335      0.000100163          13.8769          134.493       NO       
+       METROPIER-1.336        0.0135319          8.50468          148.018       NO       
+       METROPIER-1.337      0.000213766          35.6651          146.272       NO       
+       METROPIER-1.338      0.000445944          17.8544          117.667       NO       
+       METROPIER-1.339          0.00285          5.87205           117.55       NO       
+       METROPIER-1.340        0.0013397          10.5684          163.882       NO       
+       METROPIER-1.341      0.000334271          16.9564            135.9       NO       
+       METROPIER-1.342        0.0143163          14.3261          140.693       NO       
+       METROPIER-1.349        0.0928747          9.36099          125.814       NO       
+       METROPIER-1.353        0.0190277          25.8792          145.501       NO       
+  
+  
+  *step, name=NoTrain, nlgeom=NO
+  *step, name=OneTrain, nlgeom=NO
+  *step, name=TwoTrains, nlgeom=NO
+  *step, name=NoTrain, nlgeom=NO
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *step, name=OneTrain, nlgeom=NO
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *step, name=TwoTrains, nlgeom=NO
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *step, name=NoTrain, nlgeom=NO
+  *step, name=OneTrain, nlgeom=NO
+  *step, name=TwoTrains, nlgeom=NO
+  *step, name=NoTrain, nlgeom=NO
+  *static
+  *dload
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *dsload
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *endstep
+  *step, name=OneTrain, nlgeom=NO
+  *static
+  *dsload
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *endstep
+  *step, name=TwoTrains, nlgeom=NO
+  *static
+  *dsload
+  *output, field, variable=PRESELECT
+  *output, history, variable=PRESELECT
+  *endstep
+  *boundary
+  *step, name=NoTrain, nlgeom=NO
+  *static
+  *endstep
+  *step, name=OneTrain, nlgeom=NO
+  *static
+  *endstep
+  *step, name=TwoTrains, nlgeom=NO
+  *static
+  *endstep
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                   354
+          NUMBER OF NODES IS                                      673
+          NUMBER OF NODES DEFINED BY THE USER                     673
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                 2019
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.30    
+       SYSTEM TIME (SEC)    =     0.20    
+       TOTAL CPU TIME (SEC) =     0.50    
+       WALLCLOCK TIME (SEC) =            0
+1
+
+   Abaqus Learning Edition 2026                                  Date 31-Oct-2026   Time 10:58:25
+   
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                0.100    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                0.200    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      7.4694568E-07
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                     -2.6688171E-11      5.2898075E-10       4.349729    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      3.6699564E-05      3.4754141E-05      7.4286367E-06
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -2.0908814E-15      1.3329441E-16     -5.6041655E-15
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      2.2567248E-05      2.0621825E-05      7.4286367E-06
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -2.0908814E-15      4.6584248E-17     -3.8855013E-15
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          3.63E+07               18                 29
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus Learning Edition 2026                                  Date 31-Oct-2026   Time 10:58:25
+   
+
+                                                                                               STEP    2  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       2     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 1.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          3.63E+07               18                 29
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus Learning Edition 2026                                  Date 31-Oct-2026   Time 10:58:26
+   
+
+                                                                                               STEP    3  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       3     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 1.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          3.63E+07               18                 29
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      1 WARNING MESSAGES ON THE DAT FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      2.8    
+       SYSTEM TIME (SEC)    =      1.3    
+       TOTAL CPU TIME (SEC) =      4.1    
+       WALLCLOCK TIME (SEC) =            2

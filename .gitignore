@@ -23,3 +23,7 @@ desktop.ini
 *.step
 *.stp
 cad/
+
+# Exclude document PDFs
+*.pdf
+*.docx
