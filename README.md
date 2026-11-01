@@ -98,14 +98,16 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 
 ## visual results (optimal job-local-35)
 
-### 1. 3d nodal displacement field contours ($|\mathbf{u}|$)
+### 1. 3d nodal displacement field contours ($U_2$ transverse & $U_3$ vertical)
 
-| Case 2: One Train Loaded (Asymmetric Cantilever Flexure) | Case 3: Two Trains Loaded (Symmetric Compression) |
+| Case 2: Transverse Displacement $U_2$ (1 Train) | Case 3: Transverse Displacement $U_2$ (2 Trains) |
 | :---: | :---: |
-| ![Displacement One Train](images/contour_u_onetrain.png) | ![Displacement Two Trains](images/contour_u_twotrains.png) |
+| ![Displacement U2 One Train](images/contour_u2_onetrain.png) | ![Displacement U2 Two Trains](images/contour_u2_twotrains.png) |
+| **Case 2: Vertical Displacement $U_3$ (1 Train)** | **Case 3: Vertical Displacement $U_3$ (2 Trains)** |
+| ![Displacement U3 One Train](images/contour_u3_onetrain.png) | ![Displacement U3 Two Trains](images/contour_u3_twotrains.png) |
 
-* **case 2 cantilever flexure:** peak transverse tip deflection reaches $u_{\text{tip}} = 3.166\,\text{mm}$ at the loaded wingtip, showing excellent agreement with analytical Euler-Bernoulli beam theory ($3.190\,\text{mm}$, discrepancy $<0.75\%$) and well within the serviceability limit $\Delta_{\text{allow}} = \frac{L}{800} = 4.375\,\text{mm}$.
-* **case 3 axial settlement:** uniform vertical compression and axial shortening yielding downward settlement of $u_z = 0.768\,\text{mm}$ across the bearing seats, strictly bounded within the foundation allowance.
+* **case 2 cantilever flexure:** eccentric train traffic induces severe column sway ($U_2 = -2.458\,\text{mm}$) and crosshead tip deflection ($U_3 = -1.995\,\text{mm}$), producing a resultant 3D tip deflection $|\mathbf{U}| = 3.166\,\text{mm}$ that matches analytical Euler-Bernoulli beam theory within $0.75\%$ and remains well below the allowable serviceability limit ($\Delta_{\text{allow}} = \frac{L}{800} = 4.375\,\text{mm}$).
+* **case 3 axial settlement:** balanced dual-track loading virtually eliminates transverse column sway ($U_2 = -0.141\,\text{mm}$) via moment cancellation ($M_{\text{net}} \approx 0$), resulting in uniform elastic downward settlement of $U_3 = -0.755\,\text{mm}$ ($|\mathbf{U}| = 0.768\,\text{mm}$).
 
 ### 2. von mises stress contours & haunch stress concentrations
 
