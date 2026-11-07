@@ -27,9 +27,11 @@ finite element stress and serviceability deflection simulation of an elevated vi
 ### scripts/ >>>>>post-processing & visualization<<<<<
 * `generate_mesh_convergence_plot.py`: standalone python script using matplotlib to render the publication-grade mesh convergence plot with dual y-axes and horizontal asymptote.
 * `plot_figure6_mesh_convergence.m`: matlab script for convergence evaluation and asymptotic regression.
+* `plot_gauss_vs_nodal_extrapolation.m`: matlab script illustrating the mathematical relationship and gradient overshoot between constitutive gauss integration points and nodal-averaged viewport contour extrapolation.
+* `plot_convergence_comparison.m`: matlab script evaluating convergence metrics and error distributions across discretization levels.
 
 ### images/ >>>>>high-res setup & analysis captures<<<<<
-* viewport contour plots, haunch close-ups, partition diagrams, and dialog captures.
+* viewport contour plots, haunch close-ups, partition diagrams, structural force diagrams, and setup dialog captures.
 
 ---
 
@@ -39,7 +41,7 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 * **overall pier height:** $15.100\,\text{m}$ ($2.500\,\text{m}$ pile cap footing + $9.400\,\text{m}$ prismatic column stem + $3.200\,\text{m}$ crosshead).
 * **crosshead breadth:** $8.600\,\text{m}$ across top bearing deck ($2.500\,\text{m}$ longitudinal track depth).
-* **column cross-section:** $2.500\,\text{m} \times 2.500\,\text{m}$ square shaft with $R = 0.500\,\text{m}$ corner fillets.
+* **column cross-section:** $2.500\,\text{m} \times 2.800\,\text{m}$ shaft.
 * **cantilever haunch transitions:** double-curved concave circular fillets ($R = 2.000\,\text{m}$).
 
 ---
@@ -54,7 +56,17 @@ finite element stress and serviceability deflection simulation of an elevated vi
 * **z-axis (vertical):** opposed to gravity ($0.000\,\text{m}$ at pile cap bottom to $+15.100\,\text{m}$ at bearing seats).
 * **foundation constraint:** fully fixed (encastre: $U_1 = U_2 = U_3 = UR_1 = UR_2 = UR_3 = 0$) across the bottom surface of the footing ($10.0\,\text{m} \times 8.0\,\text{m} = 80.0\,\text{m}^2$).
 
-### 2. material properties & load cases
+### 2. structural loading diagram & force balance
+![Substructure Force Diagram](images/metro_tpier_force_diagram.png)
+
+* **concrete self-weight:** design unit weight $\gamma_c = 24.5\,\text{kN/m}^3 \times 126.7\,\text{m}^3 \approx 3,100\,\text{kN}$ ($g = -9,810\,\text{mm/s}^2$ downward along $z$-axis).
+* **dead load pressure (twin spans):** $q_{\text{dead}} = 0.223\,\text{MPa}$ ($P_{\text{dead}} = 4,800\,\text{kN}$ across bearing deck areas).
+* **train live load pressure:** $q_{\text{train}} = 0.121\,\text{MPa}$ ($P_{\text{train}} = 1,300\,\text{kN}$ per track).
+  * **case 1 (no train):** dead load only ($q_1 = q_2 = 0.223\,\text{MPa}$, $P = 4,800\,\text{kN}$, total reaction $R_z = 7,900\,\text{kN}$).
+  * **case 2 (1 train on track 1):** asymmetric live loading ($q_1 = 0.344\,\text{MPa}, q_2 = 0.223\,\text{MPa}$, $P = 6,100\,\text{kN}$, $R_z = 9,200\,\text{kN}$), inducing overturning moment $M_0 \approx 2,795\,\text{kN}\cdot\text{m}$.
+  * **case 3 (2 trains):** symmetric live loading ($q_1 = q_2 = 0.344\,\text{MPa}$, $P = 7,400\,\text{kN}$, $R_z = 10,500\,\text{kN}$), producing maximum axial compression.
+
+### 3. material properties
 ![Material Properties - Density](images/mat_properties_1.png)
 ![Material Properties - Elasticity](images/mat_properties_2.png)
 
@@ -62,11 +74,6 @@ finite element stress and serviceability deflection simulation of an elevated vi
 * **young's modulus:** $E = 32,500\,\text{MPa}$ ($3.25 \times 10^4\,\text{N/mm}^2$).
 * **poisson's ratio:** $\nu = 0.20$.
 * **mass density:** $\rho = 2,450\,\text{kg/m}^3 \rightarrow \rho_{\text{FEA}} = 2.45 \times 10^{-9}\,\text{tonne/mm}^3$.
-* **gravity load:** $g = -9,810\,\text{mm/s}^2$ downward along component 3 ($z$-axis).
-* **superstructure + train bearing pressure:** $q = 0.320\,\text{MPa}$ applied over elastomeric bearing areas ($1.000\,\text{m} \times 0.650\,\text{m}$).
-  * **case 1 (self-weight only):** gravity load acting on pier volume.
-  * **case 2 (one train loaded):** asymmetric live loading producing maximum transverse cantilever flexure and tip deflection.
-  * **case 3 (two trains loaded):** symmetric live loading producing maximum axial compression and footing settlement.
 
 ---
 
@@ -105,7 +112,7 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 | **Case 2: Vertical Displacement $U_3$ (1 Train)** | **Case 3: Vertical Displacement $U_3$ (2 Trains)** |
 | ![Displacement U3 One Train](images/contour_u3_onetrain.png) | ![Displacement U3 Two Trains](images/contour_u3_twotrains.png) |
 
-* **case 2 cantilever flexure:** eccentric train traffic induces severe column sway ($U_2 = -2.458\,\text{mm}$) and crosshead tip deflection ($U_3 = -1.995\,\text{mm}$), producing a resultant 3D tip deflection $|\mathbf{U}| = 3.166\,\text{mm}$ that matches analytical Euler-Bernoulli beam theory within $0.75\%$ and remains well below the allowable serviceability limit ($\Delta_{\text{allow}} = \frac{L}{800} = 4.375\,\text{mm}$).
+* **case 2 cantilever flexure:** eccentric train traffic induces severe column sway ($U_2 = -2.458\,\text{mm}$) and crosshead tip deflection ($U_3 = -1.995\,\text{mm}$), producing a resultant 3D tip deflection $|\mathbf{U}| = 3.166\,\text{mm}$ well below the allowable serviceability limit ($\Delta_{\text{allow}} = \frac{L}{800} = 3.813\,\text{mm}$, utilization ratio $0.830$).
 * **case 3 axial settlement:** balanced dual-track loading virtually eliminates transverse column sway ($U_2 = -0.141\,\text{mm}$) via moment cancellation ($M_{\text{net}} \approx 0$), resulting in uniform elastic downward settlement of $U_3 = -0.755\,\text{mm}$ ($|\mathbf{U}| = 0.768\,\text{mm}$).
 
 ### 2. von mises stress contours & haunch stress concentrations
@@ -116,8 +123,8 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 | **Case 3: Two Trains (Overall View)** | **Case 3: Haunch Root Close-up** |
 | ![Mises Two Trains](images/contour_mises_twotrains.png) | ![Mises Two Trains Close-up](images/contour_mises_twotrains_closeup.png) |
 
-* **case 2 peak stress:** localized von mises stress reaches $\sigma_{\text{vM}} = 3.177\,\text{MPa}$ along the haunch re-entrant corner fillet ($R = 2.0\,\text{m}$), safely below the compressive design strength ($f'_{cd} = 17.86\,\text{MPa}$, safety factor $SF = 5.62$).
-* **case 3 peak stress:** symmetric haunch stress concentration reaches $\sigma_{\text{vM}} = 2.590\,\text{MPa}$ ($SF = 6.90$).
+* **case 2 peak stress:** localized constitutive von mises stress reaches $\sigma_{\text{vM}} = 3.177\,\text{MPa}$ at element integration points along the haunch re-entrant corner fillet ($R = 2.000\,\text{m}$). Viewport contour legend reports extrapolated peak of $3.611\,\text{MPa}$.
+* **case 3 peak stress:** symmetric haunch constitutive stress reaches $\sigma_{\text{vM}} = 2.590\,\text{MPa}$ (contour legend reports $2.841\,\text{MPa}$).
 
 ### 3. principal stress fields ($\sigma_1$ tension & $\sigma_3$ compression)
 
@@ -125,10 +132,16 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 | :---: | :---: |
 | ![Max Principal Stress S1](images/contour_s1_tension.png) | ![Min Principal Stress S3](images/contour_s3_compression.png) |
 
-* **$\sigma_1$ (top deck & haunch tension):** peak tensile stress reaches $+3.861\,\text{MPa}$ along the upper cantilever fibers, close to the concrete tensile rupture modulus ($f_r = 3.98\,\text{MPa}$), demonstrating the necessity of longitudinal top tieback reinforcement.
-* **$\sigma_3$ (haunch compression):** peak compressive stress reaches $-2.716\,\text{MPa}$ along the inner haunch face, well below allowable limits.
+* **$\sigma_1$ (tensile cracking check):** peak tensile principal stress $S_{1,\text{max}} = 1.242\,\text{MPa}$ develops along the crosshead upper fibers under Case 3 (2 Trains), providing a safety factor $\text{SF}_{\text{crack}} = \frac{f_r}{S_{1,\text{max}}} = \frac{3.984\,\text{MPa}}{1.242\,\text{MPa}} = 3.21 > 1.0$ against the concrete rupture threshold.
+* **$\sigma_3$ (compressive crushing check):** peak compressive principal stress $|S_{3,\text{min}}| = 3.391\,\text{MPa}$ concentrates at the haunch re-entrant corner under Case 2 (1 Train), yielding a crushing safety factor $\text{SF}_{\text{crush}} = \frac{0.60 f'_c}{|S_{3,\text{min}}|} = \frac{24.00\,\text{MPa}}{3.391\,\text{MPa}} = 7.08 \gg 1.0$.
 
-### 4. stress distribution along haunch path
+### 4. constitutive gauss integration point stress vs. viewport contour extrapolation
+![Gauss vs Nodal Extrapolation](images/gauss_vs_nodal_extrapolation.png)
+
+* **constitutive integration point values:** internal stresses evaluated at element gauss integration points reflect true continuum equilibrium without artificial numerical inflation.
+* **viewport contour averaging:** abaqus/cae extrapolates integration point values outward to exterior nodes using polynomial shape functions and averages across neighboring elements, naturally overshooting in steep stress concentration gradients.
+
+### 5. stress distribution along haunch path
 ![Haunch 3D Path Definition](images/abaqus_path_haunch_3d.png)
 ![Stress Distribution along Haunch Path](images/abaqus_path_haunch.png)
 
@@ -156,6 +169,11 @@ abaqus viewer odb=data/Job-Local-35.odb
 python scripts/generate_mesh_convergence_plot.py
 ```
 
+### option e: generate gauss vs nodal extrapolation visual
+```matlab
+run('scripts/plot_gauss_vs_nodal_extrapolation.m')
+```
+
 ---
 
 ## references
@@ -163,3 +181,4 @@ python scripts/generate_mesh_convergence_plot.py
 * **metro line 1 dossier:** management authority for urban railways (maur), *design documentation for ho chi minh city urban railway construction project: substructure and superstructure specifications (cầu giản đơn dầm chữ u btdul)*, hcmc, 2020.
 * **bridge design code:** ministry of science and technology, *tcvn 11823:2017: highway bridge design specifications (tiêu chuẩn thiết kế cầu đường bộ)*, ministry of transport, hanoi, 2017.
 * **fea methodology:** chandrupatla & belegundu, *introduction to finite elements in engineering*, 4th ed., pearson, 2012.
+* **abaqus theory:** dassault syst\`emes, *abaqus/cae user's guide* and *abaqus theory guide*, ver. 2024.
