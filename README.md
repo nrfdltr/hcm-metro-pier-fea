@@ -12,26 +12,28 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 ### simulation/ >>>>>abaqus setup<<<<<
 * `hcm_metro_pier_analysis.cae`: full abaqus/cae database containing partitioned geometry, c40 concrete material definitions, encastre base constraint, step history (cases 1-3), global and local seed configurations, and all 5 parametric mesh jobs.
-* `Job-Local-35.inp`: primary converged solver input deck ($h_{\text{local}} = 0.35\,\text{m}$, 517 c3d10 elements, 953 nodes, 2,859 active dofs) compliant with student license limits (<1,000 nodes).
-* `Job-Local-40.inp`: parametric input deck for local seed size $0.40\,\text{m}$ (433 elements, 813 nodes).
-* `Job-Local-45.inp`: parametric input deck for local seed size $0.45\,\text{m}$ (428 elements, 806 nodes).
-* `Job-Local-50.inp`: parametric input deck for local seed size $0.50\,\text{m}$ (354 elements, 673 nodes).
-* `Job-Local-55.inp`: baseline coarse local seed input deck for local seed size $0.55\,\text{m}$ (204 elements, 432 nodes).
+* `Job-Local-*.inp`: primary C3D10 quadratic tetrahedral solver input decks across all 5 seed refinement levels ($0.55\,\text{m} \to 0.35\,\text{m}$).
+* `c3d4/Job-Local-*-C3D4.inp`: companion benchmark linear 4-node tetrahedral input decks across all 5 seed levels for element formulation comparison.
 
 ### data/ >>>>>output & diagnostics<<<<<
-* `Job-Local-*.odb`: solved binary abaqus output databases across all 5 local refinement levels containing 3d tensor fields for von mises stress, principal stresses ($\sigma_1, \sigma_2, \sigma_3$), and displacement vector components ($U_1, U_2, U_3$) across all load cases.
-* `Job-Local-*.dat`: abaqus printed output files recording element topology tallies, dof distributions, and memory statistics.
-* `Job-Local-*.msg`: step convergence diagnostics verifying standard implicit equilibrium solutions with zero cutbacks.
-* `Job-Local-*.sta`: status files recording wall-clock and cpu runtimes ($0.80\,\text{s}$ to $4.10\,\text{s}$).
+* `Job-Local-*.odb`: solved binary abaqus output databases for primary C3D10 quadratic tetrahedral elements across all 5 refinement levels.
+* `Job-Local-*.dat`, `.msg`, `.sta`: printed diagnostics, convergence tracking, and solver runtimes for C3D10 simulations.
+* `c3d4/Job-Local-*-C3D4.odb`: solved binary output databases for linear C3D4 tetrahedral elements across all 5 refinement levels ($507\,\text{KB}$ to $724\,\text{KB}$).
+* `c3d4/Job-Local-*-C3D4.dat`, `.msg`, `.sta`: solver output, diagnostics, and status files for C3D4 simulations.
+* `c3d4/convergence_comparison_results.json`: structured JSON dataset compiling extracted stress, deflection, DOF, and runtime metrics for both C3D10 and C3D4.
 
 ### scripts/ >>>>>post-processing & visualization<<<<<
 * `generate_mesh_convergence_plot.py`: standalone python script using matplotlib to render the publication-grade mesh convergence plot with dual y-axes and horizontal asymptote.
 * `plot_figure6_mesh_convergence.m`: matlab script for convergence evaluation and asymptotic regression.
 * `plot_gauss_vs_nodal_extrapolation.m`: matlab script illustrating the mathematical relationship and gradient overshoot between constitutive gauss integration points and nodal-averaged viewport contour extrapolation.
-* `plot_convergence_comparison.m`: matlab script evaluating convergence metrics and error distributions across discretization levels.
+* `plot_convergence_comparison.m`: matlab script evaluating convergence metrics and error distributions between C3D10 and C3D4.
+* `plot_convergence_comparison.py`: standalone python script rendering publication comparison plots between C3D10 and C3D4 formulations.
+* `generate_all_c3d4.py`: automation script converting quadratic C3D10 input decks into first-order C3D4 linear tetrahedral elements.
+* `run_all_c3d4.py`: batch solver runner executing the 5 C3D4 parametric jobs via the Abaqus CLI.
+* `extract_comparison.py`: python utility reading ODB databases to dump structured convergence metrics to JSON.
 
 ### images/ >>>>>high-res setup & analysis captures<<<<<
-* viewport contour plots, haunch close-ups, partition diagrams, structural force diagrams, and setup dialog captures.
+* viewport contour plots, haunch close-ups, partition diagrams, structural force diagrams, setup dialog captures, and `c3d10_vs_c3d4_convergence.png` element formulation comparison.
 
 ---
 
@@ -101,6 +103,30 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 | ![Mesh 35 Overview](images/abaqus_mesh_local35.png) | ![Mesh 35 Detail](images/abaqus_mesh_local35_closeup.png) |
 
 ---
+
+---
+
+## element formulation benchmark: c3d10 (quadratic) vs c3d4 (linear tet)
+
+To rigorously verify the element formulation choice and evaluate susceptibility to artificial numerical locking, a companion convergence study was solved using 4-node linear tetrahedral elements (**C3D4**) across identical geometric partitions and seed sizes ($h_{\text{local}} = 0.55\,\text{m} \to 0.35\,\text{m}$).
+
+![Element Formulation Convergence Comparison](images/c3d10_vs_c3d4_convergence.png)
+
+### comparative convergence metrics (case 2: 1 train)
+
+| Local Seed $h_{\text{local}}$ | C3D10 Mises $\sigma_{\text{vM}}$ (MPa) | C3D4 Mises $\sigma_{\text{vM}}$ (MPa) | Stress Ratio ($\sigma_{\text{C3D4}} / \sigma_{\text{C3D10}}$) | C3D10 Tip Disp $|\mathbf{U}|$ (mm) | C3D4 Tip Disp $|\mathbf{U}|$ (mm) | Deflection Ratio ($|\mathbf{U}|_{\text{C3D4}} / |\mathbf{U}|_{\text{C3D10}}$) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0.55 m | 3.216 | 2.387 | 0.742 | 3.112 | 0.737 | 0.237 |
+| 0.50 m | 3.158 | 2.476 | 0.784 | 3.173 | 0.768 | 0.242 |
+| 0.45 m | 3.054 | 2.654 | 0.869 | 3.165 | 0.759 | 0.240 |
+| 0.40 m | 3.055 | 2.650 | 0.867 | 3.167 | 0.762 | 0.241 |
+| 0.35 m (Optimal) | 3.177 | 2.848 | 0.896 | 3.166 | 0.765 | 0.242 |
+
+### physical findings & shear locking mechanism
+
+* **severe shear locking in bending (~76% compliance deficit):** first-order constant-strain tetrahedral elements (C3D4) exhibit severe artificial shear stiffness when subjected to flexure. As depicted in subplot (b), C3D4 predicts a cantilever tip deflection of only $0.765\,\text{mm}$ (a normalized ratio of $0.242$), underpredicting the true structural flexibility by approximately $76\%$ compared to the converged C3D10 baseline ($3.166\,\text{mm}$).
+* **stress gradient attenuation:** because C3D4 assumes uniform strain across each element, it cannot resolve the steep parabolic stress gradient along the curved haunch fillet ($R = 2.000\,\text{m}$) without excessive mesh density. Even at the finest seed ($h_{\text{local}} = 0.35\,\text{m}$), C3D4 underestimates peak von Mises stress by $10.4\%$ ($2.848\,\text{MPa}$ vs. $3.177\,\text{MPa}$).
+* **justification for c3d10 adoption:** second-order 10-node tetrahedral elements (C3D10) with quadratic displacement interpolation cleanly capture flexural curvature without parasitic shear locking, justifying their selection as the primary element formulation for all design code verifications.
 
 ## visual results (optimal job-local-35)
 
