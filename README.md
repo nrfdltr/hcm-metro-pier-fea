@@ -85,9 +85,9 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 ![Mesh Convergence Study](images/mesh_convergence_study.png)
 
 ### mesh comparison: coarse vs fine haunch discretization
-| Mesh: Local_60 Overview | Mesh: Local_60 Haunch Detail |
+| Mesh: Local_80 Overview | Mesh: Local_80 Haunch Detail |
 | :---: | :---: |
-| ![Mesh 60 Overview](images/abaqus_mesh_local60.png) | ![Mesh 60 Detail](images/abaqus_mesh_local60_closeup.png) |
+| ![Mesh 80 Overview](images/abaqus_mesh_local80.png) | ![Mesh 80 Detail](images/abaqus_mesh_local80_closeup.png) |
 | **Mesh: Local_30 Overview (Optimal)** | **Mesh: Local_30 Haunch Detail** |
 | ![Mesh 30 Overview](images/abaqus_mesh_local30.png) | ![Mesh 30 Detail](images/abaqus_mesh_local30_closeup.png) |
 
