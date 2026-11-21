@@ -3,20 +3,20 @@
 clear; clc; close all;
 
 %% 1. SIMULATION CONVERGENCE DATA (FROM ABAQUS .ODB & .DAT)
-% Levels: Local-55, Local-50, Local-45, Local-40, Local-35
-mesh_labels = {'Local-55', 'Local-50', 'Local-45', 'Local-40', 'Local-35'};
-local_seeds = [0.55, 0.50, 0.45, 0.40, 0.35];
-elements    = [204, 354, 428, 433, 517];        % C3D10 quadratic elements
-nodes       = [432, 673, 806, 813, 953];
-dofs        = [1296, 2019, 2418, 2439, 2859];
+% Levels: Local_80, Local_70, Local_45, Local_40, Local_30
+mesh_labels = {'Local\_80', 'Local\_70', 'Local\_45', 'Local\_40', 'Local\_30'};
+local_seeds = [0.80, 0.70, 0.45, 0.40, 0.30];
+elements    = [3193, 16854, 20739, 21582, 32111];        % C3D10 quadratic elements
+nodes       = [5386, 25836, 31596, 32852, 48360];
+dofs        = [16158, 77508, 94788, 98556, 145080];
 
 % Maximum von Mises Stress \sigma_{vM,max} (MPa)
-svm_case2 = [3.216, 3.158, 3.054, 3.055, 3.177];
-svm_case3 = [2.737, 2.606, 2.620, 2.603, 2.590]; 
+svm_case2 = [3.927, 3.989, 3.953, 3.870, 3.842];
+svm_case3 = [2.888, 2.924, 2.901, 3.019, 3.021]; 
 
 % Maximum Nodal Displacement U_{max} (mm)
-u_case2   = [3.112, 3.173, 3.165, 3.167, 3.166]; 
-u_case3   = [0.770, 0.767, 0.767, 0.768, 0.768]; 
+u_case2   = [3.422, 3.430, 3.430, 3.430, 3.433]; 
+u_case3   = [0.922, 0.923, 0.924, 0.924, 0.924]; 
 x = 1:5;
 
 %% 2. COLOR PALETTE
@@ -44,7 +44,7 @@ plot(ax1, x, svm_case3, '--s', 'Color', c_blue, 'LineWidth', 1.8, ...
      'DisplayName', 'Case 3: 2 Trains');
 
 xlim(ax1, [0.7, 5.3]);
-ylim(ax1, [2.2, 3.5]);
+ylim(ax1, [2.5, 4.3]);
 xticks(ax1, x);
 xticklabels(ax1, mesh_labels);
 
@@ -67,7 +67,7 @@ plot(ax2, x, u_case3, '--s', 'Color', c_blue, 'LineWidth', 1.8, ...
      'DisplayName', 'Case 3: 2 Trains');
 
 xlim(ax2, [0.7, 5.3]);
-ylim(ax2, [0.5, 3.6]);
+ylim(ax2, [0.5, 3.8]);
 xticks(ax2, x);
 xticklabels(ax2, mesh_labels);
 
