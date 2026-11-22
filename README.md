@@ -12,6 +12,7 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 ### simulation/ >>>>>abaqus setup<<<<<
 * `hcm_metro_pier_analysis.cae`: full abaqus/cae database containing partitioned geometry, c40 concrete material definitions, encastre base constraint, step history (cases 1-3), global and local seed configurations, and all 5 parametric mesh jobs.
+* `hcm_metro_tpier.cae`: abaqus/cae model database for the metro viaduct t-pier substructure.
 * `Local_*.inp`: primary C3D10 quadratic tetrahedral solver input decks across all 5 seed refinement levels ($0.80\,\text{m} \to 0.30\,\text{m}$).
 
 ### data/ >>>>>output & diagnostics<<<<<
