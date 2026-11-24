@@ -36,7 +36,7 @@ finite element stress and serviceability deflection simulation of an elevated vi
 
 * **overall pier height:** $15.100\,\text{m}$ ($2.500\,\text{m}$ pile cap footing + $9.400\,\text{m}$ prismatic column stem + $3.200\,\text{m}$ crosshead).
 * **crosshead breadth:** $8.600\,\text{m}$ across top bearing deck ($2.500\,\text{m}$ longitudinal track depth).
-* **column cross-section:** $2.500\,\text{m} \times 2.800\,\text{m}$ shaft.
+* **column cross-section:** $2.500\,\text{m} \times 2.500\,\text{m}$ square shaft ($R = 0.500\,\text{m}$ corner fillets).
 * **cantilever haunch transitions:** double-curved concave circular fillets ($R = 2.000\,\text{m}$).
 
 ---
@@ -54,12 +54,12 @@ finite element stress and serviceability deflection simulation of an elevated vi
 ### 2. structural loading diagram & force balance
 ![Substructure Force Diagram](images/metro_tpier_force_diagram.png)
 
-* **concrete self-weight:** design unit weight $\gamma_c = 24.5\,\text{kN/m}^3 \times 126.7\,\text{m}^3 \approx 3,100\,\text{kN}$ ($g = -9,810\,\text{mm/s}^2$ downward along $z$-axis).
-* **dead load pressure (twin spans):** $q_{\text{dead}} = 0.223\,\text{MPa}$ ($P_{\text{dead}} = 4,800\,\text{kN}$ across bearing deck areas).
+* **concrete self-weight:** design unit weight $\gamma_c = 24.5\,\text{kN/m}^3 \times 304.9\,\text{m}^3 \approx 7,470\,\text{kN}$ ($g = -9,810\,\text{mm/s}^2$ downward along $z$-axis).
+* **dead load pressure (twin spans):** $q_{\text{dead}} = 0.223\,\text{MPa}$ ($P_{\text{dead}} = 4,800\,\text{kN}$ across bearing deck areas, $L_{\text{trib}} = 30.0\,\text{m}$).
 * **train live load pressure:** $q_{\text{train}} = 0.121\,\text{MPa}$ ($P_{\text{train}} = 1,300\,\text{kN}$ per track).
-  * **case 1 (no train):** dead load only ($q_1 = q_2 = 0.223\,\text{MPa}$, $P = 4,800\,\text{kN}$, total reaction $R_z = 7,900\,\text{kN}$).
-  * **case 2 (1 train on track 1):** asymmetric live loading ($q_1 = 0.344\,\text{MPa}, q_2 = 0.223\,\text{MPa}$, $P = 6,100\,\text{kN}$, $R_z = 9,200\,\text{kN}$), inducing overturning moment $M_0 \approx 2,795\,\text{kN}\cdot\text{m}$.
-  * **case 3 (2 trains):** symmetric live loading ($q_1 = q_2 = 0.344\,\text{MPa}$, $P = 7,400\,\text{kN}$, $R_z = 10,500\,\text{kN}$), producing maximum axial compression.
+  * **case 1 (no train):** dead load only ($q_1 = q_2 = 0.223\,\text{MPa}$, $P = 4,800\,\text{kN}$, static equilibrium $R_z \approx 12,270\,\text{kN}$, FEA reaction $R_z = 12,122\,\text{kN}$).
+  * **case 2 (1 train on track 1):** asymmetric live loading ($q_1 = 0.344\,\text{MPa}, q_2 = 0.223\,\text{MPa}$, $P = 6,100\,\text{kN}$, static equilibrium $R_z \approx 13,570\,\text{kN}$, FEA reaction $R_z = 13,423\,\text{kN}$), inducing overturning moment $M_0 \approx 2,795\,\text{kN}\cdot\text{m}$.
+  * **case 3 (2 trains):** symmetric live loading ($q_1 = q_2 = 0.344\,\text{MPa}$, $P = 7,400\,\text{kN}$, static equilibrium $R_z \approx 14,870\,\text{kN}$, FEA reaction $R_z = 14,724\,\text{kN}$), producing maximum axial compression.
 
 ### 3. material properties
 ![Material Properties - Density](images/mat_properties_1.png)
@@ -78,7 +78,7 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 * **global seed size:** $h_{\text{global}} = 0.50\,\text{m}$ assigned across the solid domain.
 * **local haunch partition seed:** $h_{\text{local}}$ refined from $0.80\,\text{m}$ to $0.30\,\text{m}$.
 
-| Mesh Level | Job Name | Local Seed $h_{\text{local}}$ (m) | Elements (C3D10) | Nodes | Total DOFs | CPU Time (s) | Case 2 Mises $\sigma_{\text{vM}}$ (MPa) | Case 3 Mises $\sigma_{\text{vM}}$ (MPa) | Case 2 Tip Disp $|\mathbf{U}|$ (mm) | Case 3 Settlement $|\mathbf{U}|$ (mm) |
+| Mesh Level | Job Name | Local Seed $h_{\text{local}}$ (m) | Elements (C3D10) | Nodes | Total DOFs | CPU Time (s) | Case 2 Mises $\sigma_{\text{vM}}$ (MPa) | Case 3 Mises $\sigma_{\text{vM}}$ (MPa) | Case 2 Tip Disp $\vert\mathbf{U}\vert$ (mm) | Case 3 Settlement $\vert\mathbf{U}\vert$ (mm) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 1 | `Local_80` | 0.80 | 3,193 | 5,386 | 16,158 | 2.8 | 3.927 | 2.888 | 3.422 | 0.922 |
 | 2 | `Local_70` | 0.70 | 16,854 | 25,836 | 77,508 | 16.0 | 3.989 | 2.924 | 3.430 | 0.923 |
@@ -105,8 +105,8 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 | :---: | :---: |
 | ![Displacement U2 One Train](images/contour_u2_onetrain.png) | ![Displacement U3 One Train](images/contour_u3_onetrain.png) |
 
-* **case 2 cantilever flexure:** eccentric train traffic induces transverse sway ($U_2 = -2.623\,\text{mm}$) and crosshead tip deflection ($U_3 = -2.214\,\text{mm}$), producing a resultant 3D tip deflection $|\mathbf{U}| = 3.433\,\text{mm}$ below the allowable serviceability limit ($\Delta_{\text{allow}} = \frac{L}{800} = 3.813\,\text{mm}$, reserve margin $10.0\%$).
-* **case 3 axial settlement:** balanced dual-track loading eliminates net overturning moment, resulting in uniform elastic downward settlement of $U_3 = -0.924\,\text{mm}$ ($|\mathbf{U}| = 0.924\,\text{mm}$).
+* **case 2 cantilever flexure:** eccentric train traffic induces transverse sway ($U_2 = -2.623\,\text{mm}$) and crosshead tip deflection ($U_3 = -2.214\,\text{mm}$), producing a resultant 3D tip deflection $\vert\mathbf{U}\vert = 3.433\,\text{mm}$ below the allowable serviceability limit ($\Delta_{\text{allow}} = \frac{L}{800} = 3.813\,\text{mm}$, reserve margin $10.0\%$).
+* **case 3 axial settlement:** balanced dual-track loading eliminates net overturning moment, resulting in uniform elastic downward settlement of $U_3 = -0.924\,\text{mm}$ ($\vert\mathbf{U}\vert = 0.924\,\text{mm}$).
 
 ### 2. von mises stress contours & haunch stress concentrations
 
@@ -125,8 +125,10 @@ to achieve high-fidelity stress resolution around the haunch re-entrant corners 
 | :---: | :---: |
 | ![Max Principal Stress S1](images/contour_s1_tension.png) | ![Min Principal Stress S3](images/contour_s3_compression.png) |
 
-* **$\sigma_1$ (tensile cracking check):** peak tensile principal stress $S_{1,\text{max}} = 1.671\,\text{MPa}$ develops along the crosshead upper fibers, providing a safety factor $\text{SF}_{\text{crack}} = \frac{f_r}{S_{1,\text{max}}} = \frac{3.984\,\text{MPa}}{1.671\,\text{MPa}} = 2.38 > 1.0$ against the concrete rupture threshold.
-* **$\sigma_3$ (compressive crushing check):** peak compressive principal stress $|S_{3,\text{min}}| = 4.446\,\text{MPa}$ concentrates at the haunch re-entrant corner under Case 2 (1 Train), yielding a crushing safety factor $\text{SF}_{\text{crush}} = \frac{0.60 f'_c}{|S_{3,\text{min}}|} = \frac{24.00\,\text{MPa}}{4.446\,\text{MPa}} = 5.40 \gg 1.0$.
+* **$\sigma_1$ (tensile cracking check):** peak tensile principal stress $S_{1,\text{max}} = 1.671\,\text{MPa}$ develops along the crosshead upper fibers, providing a safety factor against concrete rupture:
+  $$ \text{SF}_{\text{crack}} = \frac{f_r}{S_{1,\text{max}}} = \frac{3.984\,\text{MPa}}{1.671\,\text{MPa}} = 2.38 > 1.0 $$
+* **$\sigma_3$ (compressive crushing check):** peak compressive principal stress $\vert S_{3,\text{min}}\vert = 4.446\,\text{MPa}$ concentrates at the haunch re-entrant corner under Case 2 (1 Train), yielding a crushing safety factor:
+  $$ \text{SF}_{\text{crush}} = \frac{0.60 f'_c}{\vert S_{3,\text{min}}\vert} = \frac{24.00\,\text{MPa}}{4.446\,\text{MPa}} = 5.40 \gg 1.0 $$
 
 ### 4. stress distribution along haunch path
 ![Haunch 3D Path Definition](images/abaqus_path_haunch_3d.png)
