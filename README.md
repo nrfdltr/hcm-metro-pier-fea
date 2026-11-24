@@ -25,6 +25,9 @@ finite element stress and serviceability deflection simulation of an elevated vi
 ### images/ >>>>>high-res setup & analysis captures<<<<<
 * viewport contour plots, haunch close-ups, partition diagrams, structural force diagrams, setup dialog captures, haunch path trajectory, and mesh convergence study.
 
+### cloud storage >>>>>google drive archive<<<<<
+* [google drive project folder](https://drive.google.com/drive/folders/1MDve9fqRGpeuwaL4kVvjr_tP8OT4T8uZ?usp=sharing): complete archive containing large binary output databases (`.odb`), full solver message diagnostics (`.dat`, `.msg`, `.sta`), SolidWorks CAD files (`.SLDPRT`, `.STEP`), and official MAUR project reference dossiers.
+
 ---
 
 ## substructure geometry & context
